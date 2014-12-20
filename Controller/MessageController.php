@@ -111,7 +111,7 @@ class MessageController extends ContainerAware
         $this->container->get('fos_message.deleter')->markAsDeleted($thread);
         $this->container->get('fos_message.thread_manager')->saveThread($thread);
 
-        return new RedirectResponse($this->container->get('router')->generate('fos_message_inbox'));
+        return new RedirectResponse($this->container->get('router')->generate('fos_message_deleted'));
     }
     
     /**
